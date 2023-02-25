@@ -1,0 +1,12 @@
+﻿@using APS_HomeWork1.Models
+@model List<Category>
+<section style="padding: 150px 0;">
+	@foreach(Category category in Model)
+	{
+		<div class="container">
+			<div class="list">
+				<div class="category">@category.Name</div>
+			</div>
+		</div>
+	}
+</section>

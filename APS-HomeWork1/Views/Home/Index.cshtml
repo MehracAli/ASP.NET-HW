@@ -1,0 +1,44 @@
+﻿@using APS_HomeWork1.Models
+@model List<Game>
+
+<section style="padding: 150px 0">
+    <div class="container">
+        <div class="row">
+            <div class="categories col-3">
+                <div class="list-group" style="margin-top:10px">
+                    @foreach(Category category in (List<Category>)ViewBag.Categories)
+                    {
+                        if (@category.Name.Length > 20)
+                        {
+                            <a href="#" class="list-group-item list-group-item-action">@(category.Name.Substring(0, 20) + "...")</a>
+                        }
+                        else
+                        {
+                            <a href="#" class="list-group-item list-group-item-action">@category.Name</a>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="games col-9">
+                <div class="row">
+                    @foreach (Game game in Model)
+                    {
+                        <div class="wrap col-4">
+                            <div class="box one" style="background: url(@game.Poster); background-size:cover; background-position:center">
+                                <div class="price">
+                                    <h4>@game.Price$</h4>
+                                </div>
+                                <div class="rating row">
+                                    <h4 class="col-3" style="background-color:@(game.Metascore >=90 ? "green":"orange")">@game.Metascore</h4>
+                                    <span class="col-9 Name">@game.Name</span>
+                                </div>
+                            </div>
+                        </div> 
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+
