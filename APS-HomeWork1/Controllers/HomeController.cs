@@ -1,4 +1,5 @@
 ﻿using APS_HomeWork1.Models;
+using APS_HomeWork1.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APS_HomeWork1.Controllers
@@ -97,6 +98,11 @@ namespace APS_HomeWork1.Controllers
 		}
 		public ViewResult Index()
 		{
+			HomeVM model = new HomeVM()
+			{
+				Games = Games,
+				Categories = Categories,
+			};
 			ViewBag.Categories = Categories;
 			return View(Games);
 		}

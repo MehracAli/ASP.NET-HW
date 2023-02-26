@@ -1,0 +1,13 @@
+﻿@using APS_HomeWork1.Models
+
+@foreach (Category category in (List<Category>)ViewBag.Categories)
+{
+    if (@category.Name.Length > 20)
+    {
+        <a href="#" class="list-group-item list-group-item-action">@(category.Name.Substring(0, 20) + "...")</a>
+    }
+    else
+    {
+        <a href="#" class="list-group-item list-group-item-action">@category.Name</a>
+    }
+}

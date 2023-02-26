@@ -1,0 +1,17 @@
+﻿@using APS_HomeWork1.Models
+@model List<Game>
+
+@foreach (Game game in Model)
+{
+    <div class="wrap col-4">
+        <div class="box one" style="background: url(@game.Poster); background-size:cover; background-position:center">
+            <div class="price">
+                <h4>@game.Price$</h4>
+            </div>
+            <div class="rating row">
+                <h4 class="col-3" style="background-color:@(game.Metascore >=90 ? "green":"orange")">@game.Metascore</h4>
+                <span class="col-9 Name">@game.Name</span>
+            </div>
+        </div>
+    </div> 
+}
